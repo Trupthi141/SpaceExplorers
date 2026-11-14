@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Surface Exploration | Beyond the Mission</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="exploration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="planet-env moon-env">
+    <!-- Descent Animation Overlay -->
+    <div id="descentOverlay" class="descent-overlay">
+        <div class="descent-content">
+            <div class="descent-ship"><i class="fa-solid fa-shuttle-space"></i></div>
+            <h2>Initiating Lunar Descent</h2>
+            <p>Approaching Mare Tranquillitatis &bull; Atmospheric Entry &amp; Radar Lock...</p>
+            <div class="descent-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="site-header explore-header">
+        <div class="nav-container">
+            <a href="index.html" class="home-nav-btn">
+                <i class="fa-solid fa-arrow-left"></i> Home
+            </a>
+            <div class="logo">
+                <i class="fa-solid fa-moon"></i>
+                <span>Lunar <span class="highlight">Surface Archive</span></span>
+            </div>
+            <div class="nav-badge moon-badge">
+                <i class="fa-solid fa-location-crosshairs"></i> Sector: Mare Tranquillitatis
+            </div>
+        </div>
+    </header>
+
+    <!-- Planetary Environment Canvas / Landscape -->
+    <main class="exploration-main">
+        <div class="landscape-container moon-landscape">
+            <div class="starfield-bg" id="exploreStars"></div>
+            <div class="lunar-mountains"></div>
+            <div class="crater-surface-glow"></div>
+
+            <!-- Discovery Markers -->
+            <!-- Marker 1: Apollo Lunar Modules -->
+            <div class="discovery-marker" style="top: 58%; left: 32%;" onclick="openInfoPanel('apollo')">
+                <div class="marker-pulse"></div>
+                <div class="marker-dot"><i class="fa-solid fa-satellite-dish"></i></div>
+                <span class="marker-label">Apollo Lunar Modules</span>
+            </div>
+
+            <!-- Marker 2: Lunar Roving Vehicles -->
+            <div class="discovery-marker" style="top: 70%; left: 65%;" onclick="openInfoPanel('rover')">
+                <div class="marker-pulse"></div>
+                <div class="marker-dot"><i class="fa-solid fa-car-tunnel"></i></div>
+                <span class="marker-label">Lunar Roving Vehicles</span>
+            </div>
+
+            <!-- Marker 3: ALSEP Scientific Packages -->
+            <div class="discovery-marker" style="top: 45%; left: 78%;" onclick="openInfoPanel('alsep')">
+                <div class="marker-pulse"></div>
+                <div class="marker-dot"><i class="fa-solid fa-flask"></i></div>
+                <span class="marker-label">ALSEP Scientific Packages</span>
+            </div>
+
+            <!-- Marker 4: Surveyor Landers -->
+            <div class="discovery-marker" style="top: 65%; left: 18%;" onclick="openInfoPanel('surveyor')">
+                <div class="marker-pulse"></div>
+                <div class="marker-dot"><i class="fa-solid fa-radar"></i></div>
+                <span class="marker-label">Surveyor Landers</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Information Panel Modal -->
+    <div id="infoPanel" class="info-panel-overlay">
+        <div class="info-panel-card">
+            <button class="close-panel-btn" onclick="closeInfoPanel()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="panel-icon-header" id="panelIcon"><i class="fa-solid fa-moon"></i></div>
+            <div class="panel-tag" id="panelTag">Lunar Archaeological Site</div>
+            <h2 id="panelTitle">Equipment Name</h2>
+            <p id="panelDesc">Detailed description of the abandoned human-made equipment left behind on the lunar surface.</p>
+            <div class="panel-meta">
+                <span><i class="fa-solid fa-calendar-days"></i> <span id="panelYear">1969</span></span>
+                <span><i class="fa-solid fa-shield-halved"></i> <span id="panelWeight">Status</span></span>
+            </div>
+            <button class="story-btn moon-story-btn" onclick="openDetailedStory()">
+                <span>Discover Its Story</span>
+                <i class="fa-solid fa-book-open-reader"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Detailed Storytelling Modal Overlay -->
+    <div id="storyModal" class="story-overlay">
+        <div class="story-card">
+            <button class="close-panel-btn" onclick="closeDetailedStory()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="story-header-box">
+                <div class="story-badge-tag" id="storyTag">Lunar Archaeological Site</div>
+                <h2 id="storyTitle">Apollo Lunar Modules (Descent Stages)</h2>
+            </div>
+
+            <div class="story-meta-grid">
+                <div class="meta-item">
+                    <label>Associated Mission</label>
+                    <span id="storyMission">Apollo Program</span>
+                </div>
+                <div class="meta-item">
+                    <label>Mission Year</label>
+                    <span id="storyYear">1969 - 1972</span>
+                </div>
+                <div class="meta-item">
+                    <label>Equipment Status</label>
+                    <span id="storyStatus">Deliberately Left Behind</span>
+                </div>
+            </div>
+
+            <div class="story-photo-box">
+                <img id="storyPhoto" src="" alt="NASA Official Photography">
+                <p id="storyCaption">NASA Historical Photography</p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-bullseye"></i> Original Purpose</h3>
+                <p id="storyPurpose"></p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-timeline"></i> Historical Background</h3>
+                <p id="storyBackground"></p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-flask-vial"></i> Scientific Contributions</h3>
+                <p id="storyContributions"></p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-location-dot"></i> What Happened &amp; Current Location</h3>
+                <p id="storyFate"></p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-question-circle"></i> Why It Remained On Site</h3>
+                <p id="storyReason"></p>
+            </div>
+
+            <div class="story-references">
+                <h4><i class="fa-solid fa-link"></i> Official NASA Archives &amp; Verification</h4>
+                <div class="reference-links">
+                    <a id="storyNssdc" href="#" target="_blank" class="nasa-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> NASA NSSDC Master Catalog Entry</a>
+                    <a id="storyNasaRef" href="#" target="_blank" class="nasa-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official NASA Mission Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="moon-data.js"></script>
+    <script src="story-engine.js"></script>
+</body>
+</html>

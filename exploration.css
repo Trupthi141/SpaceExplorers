@@ -1,0 +1,675 @@
+﻿/* Exploration Environments Styling */
+
+body.planet-env {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: var(--font-body);
+    display: flex;
+    flex-direction: column;
+}
+
+body.moon-env {
+    background: radial-gradient(circle at 50% 20%, #1e293b 0%, #090d16 60%, #030712 100%);
+}
+
+body.mars-env {
+    background: radial-gradient(circle at 50% 20%, #7c2d12 0%, #431407 60%, #180502 100%);
+}
+
+/* Descent Animation Overlay */
+.descent-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #030712;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.descent-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.descent-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.descent-ship {
+    font-size: 3.5rem;
+    color: #60a5fa;
+    animation: descentBounce 1.5s ease-in-out infinite alternate;
+}
+
+.mars-ship {
+    color: #fb923c;
+}
+
+@keyframes descentBounce {
+    0% { transform: translateY(-20px) scale(0.9); }
+    100% { transform: translateY(10px) scale(1.1); }
+}
+
+.descent-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.descent-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.descent-progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 50px;
+    animation: loadProgress 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.mars-progress-bar {
+    background: linear-gradient(90deg, #ea580c, #fb923c);
+}
+
+@keyframes loadProgress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Exploration Header */
+.explore-header {
+    background: rgba(3, 7, 18, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.home-nav-btn {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.home-nav-btn:hover {
+    background: rgba(59, 130, 246, 0.3);
+    color: #fff;
+    transform: translateX(-2px);
+}
+
+.moon-badge {
+    background: rgba(226, 232, 240, 0.1);
+    border-color: rgba(226, 232, 240, 0.2);
+    color: #cbd5e1;
+}
+
+.mars-badge {
+    background: rgba(249, 115, 22, 0.15);
+    border-color: rgba(249, 115, 22, 0.3);
+    color: #fdba74;
+}
+
+/* Exploration Main & Landscape */
+.exploration-main {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 75px);
+    overflow: hidden;
+}
+
+.landscape-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Moon Landscape Styling */
+.moon-landscape {
+    background: linear-gradient(180deg, #090d16 0%, #1e293b 50%, #334155 100%);
+    box-shadow: inset 0 100px 100px rgba(0, 0, 0, 0.6);
+}
+
+.lunar-mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background: radial-gradient(ellipse at 50% 100%, #475569 0%, #1e293b 60%, #0f172a 100%);
+    clip-path: polygon(0% 100%, 0% 40%, 15% 55%, 30% 30%, 45% 60%, 60% 25%, 75% 50%, 90% 35%, 100% 45%, 100% 100%);
+    opacity: 0.9;
+}
+
+.crater-surface-glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: radial-gradient(ellipse at bottom, rgba(203, 213, 225, 0.15) 0%, transparent 70%);
+}
+
+/* Mars Landscape Styling */
+.mars-landscape {
+    background: linear-gradient(180deg, #180502 0%, #7c2d12 50%, #431407 100%);
+    box-shadow: inset 0 100px 100px rgba(0, 0, 0, 0.7);
+}
+
+.mars-mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background: radial-gradient(ellipse at 50% 100%, #c2410c 0%, #9a3412 50%, #431407 100%);
+    clip-path: polygon(0% 100%, 0% 35%, 12% 50%, 28% 25%, 42% 55%, 58% 20%, 72% 45%, 88% 30%, 100% 40%, 100% 100%);
+    opacity: 0.95;
+}
+
+.mars-atmosphere-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Discovery Markers */
+.discovery-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 50;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.discovery-marker:hover {
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.marker-dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.9);
+    border: 2px solid #3b82f6;
+    color: #60a5fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    position: relative;
+    z-index: 2;
+}
+
+.mars-dot {
+    border-color: #f97316;
+    color: #fb923c;
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
+}
+
+.marker-pulse {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.4);
+    animation: pulseMarker 2s infinite ease-out;
+    z-index: 1;
+}
+
+.mars-pulse {
+    background: rgba(249, 115, 22, 0.4);
+}
+
+@keyframes pulseMarker {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+.marker-label {
+    background: rgba(3, 7, 18, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    color: #f8fafc;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+/* Information Panel Overlay */
+.info-panel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 7, 18, 0.75);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.info-panel-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-panel-card {
+    background: #0f172a;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 24px;
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mars-panel-card {
+    border-color: rgba(249, 115, 22, 0.4);
+}
+
+.info-panel-overlay.active .info-panel-card {
+    transform: scale(1);
+}
+
+.close-panel-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.close-panel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.panel-icon-header {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    font-size: 1.35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.mars-panel-icon {
+    background: rgba(249, 115, 22, 0.15);
+    color: #fb923c;
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.panel-tag {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+}
+
+.info-panel-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.info-panel-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.panel-meta {
+    display: flex;
+    gap: 2rem;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.panel-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.panel-meta i {
+    color: #3b82f6;
+}
+
+.mars-env .panel-meta i {
+    color: #f97316;
+}
+
+.story-btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 0.5rem;
+}
+
+.moon-story-btn {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+.moon-story-btn:hover {
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+    transform: translateY(-2px);
+}
+
+.mars-story-btn {
+    background: linear-gradient(135deg, #f97316, #c2410c);
+    color: white;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+}
+
+.mars-story-btn:hover {
+    background: linear-gradient(135deg, #fb923c, #ea580c);
+    box-shadow: 0 6px 25px rgba(249, 115, 22, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Story Modal Styling */
+.story-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 7, 18, 0.92);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 1.5rem;
+}
+
+.story-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.story-card {
+    background: #0f172a;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 24px;
+    max-width: 850px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.9);
+    transform: scale(0.92);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mars-env .story-card {
+    border-color: rgba(249, 115, 22, 0.4);
+}
+
+.story-overlay.active .story-card {
+    transform: scale(1);
+}
+
+.story-header-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.story-badge-tag {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #60a5fa;
+    letter-spacing: 1px;
+}
+
+.mars-env .story-badge-tag {
+    color: #fb923c;
+}
+
+.story-header-box h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 900;
+    color: #fff;
+}
+
+.story-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.25rem;
+    border-radius: 16px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.meta-item label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+}
+
+.meta-item span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+/* Photo Container */
+.story-photo-box {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #030712;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-photo-box img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.story-photo-box p {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    background: rgba(3, 7, 18, 0.9);
+}
+
+/* Sections */
+.story-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.story-section h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #93c5fd;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mars-env .story-section h3 {
+    color: #fdba74;
+}
+
+.story-section p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* NASA References Box */
+.story-references {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 16px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.mars-env .story-references {
+    background: rgba(249, 115, 22, 0.08);
+    border-color: rgba(249, 115, 22, 0.25);
+}
+
+.story-references h4 {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reference-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nasa-link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s ease;
+}
+
+.mars-env .nasa-link {
+    color: #fb923c;
+}
+
+.nasa-link:hover {
+    text-decoration: underline;
+}
+

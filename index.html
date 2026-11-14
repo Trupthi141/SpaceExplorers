@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond the Mission | NASA Space Apps Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="space-background">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+    </div>
+
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-satellite-dish spinning-slow"></i>
+                <span>NASA <span class="highlight">Space Apps</span></span>
+            </div>
+            <div class="nav-badge">
+                <i class="fa-solid fa-meteor"></i> Challenge 2026
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-badge">
+                <i class="fa-solid fa-compass-drafting"></i> Archaeological Reconnaissance
+            </div>
+            <h1 class="hero-title">Beyond the Mission</h1>
+            <p class="hero-subtitle">
+                Decades of space exploration have left remarkable engineering marvels resting across the silent expanses of the Moon and Mars. Discover the abandoned rovers, descent stages, and scientific instruments whispering the history of human ambition.
+            </p>
+        </section>
+
+        <section class="cards-grid">
+            <!-- Moon Card -->
+            <div class="planet-card moon-card" data-planet="moon">
+                <div class="card-glow"></div>
+                <div class="visual-container">
+                    <div class="planet-sphere moon-sphere">
+                        <div class="crater c1"></div>
+                        <div class="crater c2"></div>
+                        <div class="crater c3"></div>
+                        <div class="crater c4"></div>
+                        <div class="surface-texture"></div>
+                    </div>
+                    <div class="orbit-ring">
+                        <div class="orbit-satellite"><i class="fa-solid fa-satellite"></i></div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-tag"><i class="fa-solid fa-moon"></i> Lunar Artifacts</div>
+                    <h2>Explore the Moon</h2>
+                    <p>
+                        From Apollo descent stages to abandoned lunar rovers and seismometers scattered across Mare Tranquillitatis and beyond. Uncover humanity's first cosmic footprints.
+                    </p>
+                    <div class="card-stats">
+                        <span><i class="fa-solid fa-location-dot"></i> 80+ Sites</span>
+                        <span><i class="fa-solid fa-weight-hanging"></i> 180+ Tons</span>
+                    </div>
+                    <a href="moon.html" class="explore-btn moon-btn" style="text-decoration: none;">
+                        <span>Explore Moon</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mars Card -->
+            <div class="planet-card mars-card" data-planet="mars">
+                <div class="card-glow"></div>
+                <div class="visual-container">
+                    <div class="planet-sphere mars-sphere">
+                        <div class="mars-dust"></div>
+                        <div class="mars-canyon"></div>
+                        <div class="surface-texture"></div>
+                    </div>
+                    <div class="orbit-ring">
+                        <div class="orbit-satellite mars-sat"><i class="fa-solid fa-space-shuttle"></i></div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-tag"><i class="fa-solid fa-globe"></i> Martian Relics</div>
+                    <h2>Explore Mars</h2>
+                    <p>
+                        Viking landers, Spirit, Opportunity, and Curiosity hardware resting in red dust basins and ancient riverbeds. Witness the silent sentinels of the Red Planet.
+                    </p>
+                    <div class="card-stats">
+                        <span><i class="fa-solid fa-location-dot"></i> 14+ Sites</span>
+                        <span><i class="fa-solid fa-weight-hanging"></i> 10+ Tons</span>
+                    </div>
+                    <a href="mars.html" class="explore-btn mars-btn" style="text-decoration: none;">
+                        <span>Explore Mars</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>NASA Space Apps Challenge &bull; Discovering Abandoned Human-Made Equipment on the Moon and Mars</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

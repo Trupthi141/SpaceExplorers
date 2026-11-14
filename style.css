@@ -1,0 +1,596 @@
+﻿/* CSS Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-deep: #030712;
+    --primary-blue: #3b82f6;
+    --nasa-blue: #0b3d91;
+    --nasa-red: #fc3d21;
+    --moon-accent: #e2e8f0;
+    --mars-accent: #f97316;
+    --glass-bg: rgba(15, 23, 42, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-border-hover: rgba(59, 130, 246, 0.5);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --font-heading: "Orbitron", sans-serif;
+    --font-body: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 30%, #0c1535 0%, #030712 70%);
+}
+
+#stars, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.nebula {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.nebula-1 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
+    top: -10%;
+    left: -10%;
+    animation: floatNebula 20s ease-in-out infinite alternate;
+}
+
+.nebula-2 {
+    width: 700px;
+    height: 700px;
+    background: linear-gradient(135deg, #0284c7, #e11d48);
+    bottom: -20%;
+    right: -10%;
+    animation: floatNebula 25s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatNebula {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 40px) scale(1.1); }
+}
+
+.site-header {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    background: rgba(3, 7, 18, 0.75);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.logo i {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+}
+
+.logo .highlight {
+    color: var(--nasa-red);
+}
+
+.spinning-slow {
+    animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.nav-badge {
+    background: rgba(252, 61, 33, 0.15);
+    border: 1px solid rgba(252, 61, 33, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ff765d;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.main-content {
+    flex: 1;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-section {
+    text-align: center;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-badge {
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff 30%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.hero-subtitle {
+    color: var(--text-muted);
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    line-height: 1.7;
+    max-width: 700px;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 1rem;
+}
+
+.planet-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.planet-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 30px 60px rgba(11, 61, 145, 0.25);
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.15;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.moon-card:hover .card-glow {
+    background: #e2e8f0;
+    opacity: 0.25;
+}
+
+.mars-card:hover .card-glow {
+    background: #f97316;
+    opacity: 0.3;
+}
+
+.visual-container {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.planet-sphere {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: inset -25px -15px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 0.1);
+    animation: floatPlanet 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatPlanet {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(3deg); }
+}
+
+.moon-sphere {
+    background: radial-gradient(circle at 35% 35%, #cbd5e1 0%, #64748b 60%, #1e293b 100%);
+}
+
+.crater {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.35);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.c1 { width: 25px; height: 25px; top: 30%; left: 25%; }
+.c2 { width: 15px; height: 15px; top: 60%; left: 55%; }
+.c3 { width: 35px; height: 30px; top: 20%; right: 20%; border-radius: 40% 60% 50% 50%; }
+.c4 { width: 18px; height: 18px; bottom: 20%; left: 35%; }
+
+.mars-sphere {
+    background: radial-gradient(circle at 35% 35%, #fdba74 0%, #ea580c 50%, #7c2d12 90%, #431407 100%);
+    box-shadow: inset -25px -15px 40px rgba(0, 0, 0, 0.85), 0 0 35px rgba(249, 115, 22, 0.2);
+}
+
+.mars-dust {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent 40%, rgba(254, 215, 170, 0.25) 50%, transparent 60%);
+    animation: rotateDust 15s linear infinite;
+}
+
+@keyframes rotateDust {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.mars-canyon {
+    position: absolute;
+    width: 70px;
+    height: 12px;
+    background: rgba(67, 20, 7, 0.5);
+    border-radius: 10px;
+    top: 55%;
+    left: 20%;
+    transform: rotate(-15deg);
+    filter: blur(1px);
+}
+
+.orbit-ring {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    animation: spinOrbit 20s linear infinite;
+}
+
+@keyframes spinOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.orbit-satellite {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid var(--primary-blue);
+    color: #60a5fa;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.mars-sat {
+    border-color: var(--mars-accent);
+    color: #fdba74;
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+}
+
+.card-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card-tag {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.moon-card .card-tag { color: #cbd5e1; }
+.mars-card .card-tag { color: #fdba74; }
+
+.card-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.card-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.card-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card-stats i {
+    color: var(--primary-blue);
+}
+
+.mars-card .card-stats i {
+    color: var(--mars-accent);
+}
+
+.explore-btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 0.5rem;
+}
+
+.moon-btn {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+.moon-btn:hover {
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+    transform: translateY(-2px);
+}
+
+.mars-btn {
+    background: linear-gradient(135deg, #f97316, #c2410c);
+    color: white;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+}
+
+.mars-btn:hover {
+    background: linear-gradient(135deg, #fb923c, #ea580c);
+    box-shadow: 0 6px 25px rgba(249, 115, 22, 0.6);
+    transform: translateY(-2px);
+}
+
+.explore-btn i {
+    transition: transform 0.3s ease;
+}
+
+.explore-btn:hover i {
+    transform: translateX(5px);
+}
+
+.site-footer {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+    background: rgba(3, 7, 18, 0.8);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 7, 18, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    background: #0f172a;
+    border: 1px solid var(--glass-border-hover);
+    border-radius: 24px;
+    padding: 2.5rem;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1);
+}
+
+.modal-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.modal-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.modal-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.modal-close-btn {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    width: 100%;
+}
+
+.modal-close-btn:hover {
+    background: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 1rem;
+    }
+
+    .main-content {
+        padding: 2rem 1rem 3rem 1rem;
+        gap: 2rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .planet-card {
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+    }
+}

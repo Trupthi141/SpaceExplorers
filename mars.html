@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martian Surface Exploration | Beyond the Mission</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="exploration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="planet-env mars-env">
+    <!-- Descent Animation Overlay -->
+    <div id="descentOverlay" class="descent-overlay mars-descent">
+        <div class="descent-content">
+            <div class="descent-ship mars-ship"><i class="fa-solid fa-space-shuttle"></i></div>
+            <h2>Entering Martian Atmosphere</h2>
+            <p>Approaching Gale Crater &bull; Aeroshell Deployment &amp; Radar Altimeter Active...</p>
+            <div class="descent-progress">
+                <div class="progress-bar mars-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="site-header explore-header">
+        <div class="nav-container">
+            <a href="index.html" class="home-nav-btn">
+                <i class="fa-solid fa-arrow-left"></i> Home
+            </a>
+            <div class="logo">
+                <i class="fa-solid fa-globe"></i>
+                <span>Mars <span class="highlight">Surface Archive</span></span>
+            </div>
+            <div class="nav-badge mars-badge">
+                <i class="fa-solid fa-location-crosshairs"></i> Sector: Gale &amp; Jezero Basins
+            </div>
+        </div>
+    </header>
+
+    <!-- Planetary Environment Canvas / Landscape -->
+    <main class="exploration-main">
+        <div class="landscape-container mars-landscape">
+            <div class="starfield-bg" id="exploreStars"></div>
+            <div class="mars-mountains"></div>
+            <div class="mars-atmosphere-glow"></div>
+            <div class="dust-storm-particles"></div>
+
+            <!-- Discovery Markers -->
+            <!-- Marker 1: Sojourner Rover -->
+            <div class="discovery-marker" style="top: 60%; left: 20%;" onclick="openInfoPanel('sojourner')">
+                <div class="marker-pulse mars-pulse"></div>
+                <div class="marker-dot mars-dot"><i class="fa-solid fa-robot"></i></div>
+                <span class="marker-label">Sojourner Rover</span>
+            </div>
+
+            <!-- Marker 2: Spirit Rover -->
+            <div class="discovery-marker" style="top: 72%; left: 38%;" onclick="openInfoPanel('spirit')">
+                <div class="marker-pulse mars-pulse"></div>
+                <div class="marker-dot mars-dot"><i class="fa-solid fa-car-side"></i></div>
+                <span class="marker-label">Spirit Rover</span>
+            </div>
+
+            <!-- Marker 3: Opportunity Rover -->
+            <div class="discovery-marker" style="top: 68%; left: 58%;" onclick="openInfoPanel('opportunity')">
+                <div class="marker-pulse mars-pulse"></div>
+                <div class="marker-dot mars-dot"><i class="fa-solid fa-car-side"></i></div>
+                <span class="marker-label">Opportunity Rover</span>
+            </div>
+
+            <!-- Marker 4: Viking Landers -->
+            <div class="discovery-marker" style="top: 42%; left: 75%;" onclick="openInfoPanel('viking')">
+                <div class="marker-pulse mars-pulse"></div>
+                <div class="marker-dot mars-dot"><i class="fa-solid fa-satellite-dish"></i></div>
+                <span class="marker-label">Viking 1 &amp; 2 Landers</span>
+            </div>
+
+            <!-- Marker 5: Phoenix Lander -->
+            <div class="discovery-marker" style="top: 35%; left: 45%;" onclick="openInfoPanel('phoenix')">
+                <div class="marker-pulse mars-pulse"></div>
+                <div class="marker-dot mars-dot"><i class="fa-solid fa-solar-panel"></i></div>
+                <span class="marker-label">Phoenix Lander</span>
+            </div>
+
+            <!-- Marker 6: InSight Lander -->
+            <div class="discovery-marker" style="top: 52%; left: 50%;" onclick="openInfoPanel('insight')">
+                <div class="marker-pulse mars-pulse"></div>
+                <div class="marker-dot mars-dot"><i class="fa-solid fa-solar-panel"></i></div>
+                <span class="marker-label">InSight Lander</span>
+            </div>
+
+            <!-- Marker 7: Ingenuity Helicopter -->
+            <div class="discovery-marker" style="top: 65%; left: 82%;" onclick="openInfoPanel('ingenuity')">
+                <div class="marker-pulse mars-pulse"></div>
+                <div class="marker-dot mars-dot"><i class="fa-solid fa-helicopter"></i></div>
+                <span class="marker-label">Ingenuity Helicopter</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Information Panel Modal -->
+    <div id="infoPanel" class="info-panel-overlay">
+        <div class="info-panel-card mars-panel-card">
+            <button class="close-panel-btn" onclick="closeInfoPanel()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="panel-icon-header mars-panel-icon" id="panelIcon"><i class="fa-solid fa-globe"></i></div>
+            <div class="panel-tag" id="panelTag">Martian Archaeological Site</div>
+            <h2 id="panelTitle">Equipment Name</h2>
+            <p id="panelDesc">Detailed description of the abandoned human-made equipment left behind on the Martian surface.</p>
+            <div class="panel-meta">
+                <span><i class="fa-solid fa-calendar-days"></i> <span id="panelYear">1997</span></span>
+                <span><i class="fa-solid fa-shield-halved"></i> <span id="panelWeight">Status</span></span>
+            </div>
+            <button class="story-btn mars-story-btn" onclick="openDetailedStory()">
+                <span>Discover Its Story</span>
+                <i class="fa-solid fa-book-open-reader"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Detailed Storytelling Modal Overlay -->
+    <div id="storyModal" class="story-overlay">
+        <div class="story-card">
+            <button class="close-panel-btn" onclick="closeDetailedStory()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="story-header-box">
+                <div class="story-badge-tag" id="storyTag">Martian Archaeological Site</div>
+                <h2 id="storyTitle">Sojourner Rover</h2>
+            </div>
+
+            <div class="story-meta-grid">
+                <div class="meta-item">
+                    <label>Associated Mission</label>
+                    <span id="storyMission">Mars Pathfinder</span>
+                </div>
+                <div class="meta-item">
+                    <label>Mission Year</label>
+                    <span id="storyYear">1997</span>
+                </div>
+                <div class="meta-item">
+                    <label>Equipment Status</label>
+                    <span id="storyStatus">Inactive</span>
+                </div>
+            </div>
+
+            <div class="story-photo-box">
+                <img id="storyPhoto" src="" alt="NASA Official Photography">
+                <p id="storyCaption">NASA Historical Photography</p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-bullseye"></i> Original Purpose</h3>
+                <p id="storyPurpose"></p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-timeline"></i> Historical Background</h3>
+                <p id="storyBackground"></p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-flask-vial"></i> Scientific Contributions</h3>
+                <p id="storyContributions"></p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-location-dot"></i> What Happened &amp; Current Location</h3>
+                <p id="storyFate"></p>
+            </div>
+
+            <div class="story-section">
+                <h3><i class="fa-solid fa-question-circle"></i> Why It Remained On Site</h3>
+                <p id="storyReason"></p>
+            </div>
+
+            <div class="story-references">
+                <h4><i class="fa-solid fa-link"></i> Official NASA Archives &amp; Verification</h4>
+                <div class="reference-links">
+                    <a id="storyNssdc" href="#" target="_blank" class="nasa-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> NASA NSSDC Master Catalog Entry</a>
+                    <a id="storyNasaRef" href="#" target="_blank" class="nasa-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official NASA Mission Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="mars-data.js"></script>
+    <script src="story-engine.js"></script>
+</body>
+</html>
