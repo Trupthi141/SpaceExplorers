@@ -15,7 +15,9 @@ const marsEquipment = {
         photoCaption: "Sojourner rover analyzing the rock Yogi in Ares Vallis.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-068A",
         nasaRef: "https://mars.nasa.gov/mars-exploration/missions/pathfinder/",
-        icon: "fa-solid fa-robot"
+        icon: "fa-solid fa-robot",
+        searchTerm: "Sojourner Mars rover",
+        searchKeywords: ["sojourner", "rover", "pathfinder", "mars", "robot"]
     },
     spirit: {
         tag: "Geological Explorer",
@@ -32,7 +34,9 @@ const marsEquipment = {
         photoCaption: "Spirit rover stuck in soft sand at the Troy site in Gusev Crater.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
         nasaRef: "https://mars.nasa.gov/mer/mission/spacecraft/spirit/",
-        icon: "fa-solid fa-car-side"
+        icon: "fa-solid fa-car-side",
+        searchTerm: "Spirit rover Mars",
+        searchKeywords: ["spirit", "rover", "mars", "mer", "gusev"]
     },
     opportunity: {
         tag: "Endurance Record Holder",
@@ -49,7 +53,9 @@ const marsEquipment = {
         photoCaption: "Selfie of Opportunity showing dust-laden solar arrays on Mars.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-032A",
         nasaRef: "https://mars.nasa.gov/mer/mission/spacecraft/opportunity/",
-        icon: "fa-solid fa-car-side"
+        icon: "fa-solid fa-car-side",
+        searchTerm: "Opportunity rover Mars",
+        searchKeywords: ["opportunity", "rover", "mars", "mer", "crater"]
     },
     viking: {
         tag: "Historic Astrobiology Landers",
@@ -66,8 +72,10 @@ const marsEquipment = {
         photoCaption: "Viking 1 Lander camera view of Chryse Planitia rocky surface.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/viking.html",
         nasaRef: "https://history.nasa.gov/SP-4212/contents.html",
-        icon: "fa-solid fa-satellite-dish"
-    }
+        icon: "fa-solid fa-satellite-dish",
+        searchTerm: "Viking Mars lander",
+        searchKeywords: ["viking", "lander", "mars", "chryse", "utopia"]
+    },
     phoenix: {
         tag: "Polar Ice Explorer",
         title: "Phoenix Lander",
@@ -83,7 +91,9 @@ const marsEquipment = {
         photoCaption: "Phoenix robotic arm trench showing exposed white subsurface water ice.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2008-029A",
         nasaRef: "https://mars.nasa.gov/phoenix/",
-        icon: "fa-solid fa-solar-panel"
+        icon: "fa-solid fa-solar-panel",
+        searchTerm: "Phoenix Mars lander",
+        searchKeywords: ["phoenix", "lander", "mars", "polar", "ice"]
     },
     insight: {
         tag: "Interior Geophysics Station",
@@ -100,7 +110,9 @@ const marsEquipment = {
         photoCaption: "InSight lander selfie showing dust accumulation on solar arrays.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-097A",
         nasaRef: "https://mars.nasa.gov/insight/",
-        icon: "fa-solid fa-solar-panel"
+        icon: "fa-solid fa-solar-panel",
+        searchTerm: "InSight Mars lander",
+        searchKeywords: ["insight", "lander", "mars", "seismometer", "quake"]
     },
     ingenuity: {
         tag: "Extraterrestrial Aviation",
@@ -117,7 +129,8 @@ const marsEquipment = {
         photoCaption: "Ingenuity helicopter on the red regolith of Jezero Crater.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-068A",
         nasaRef: "https://mars.nasa.gov/technology/helicopter/",
-        icon: "fa-solid fa-helicopter"
-    },
-
+        icon: "fa-solid fa-helicopter",
+        searchTerm: "Ingenuity Mars helicopter",
+        searchKeywords: ["ingenuity", "helicopter", "mars", "flight", "drone"]
+    }
 };

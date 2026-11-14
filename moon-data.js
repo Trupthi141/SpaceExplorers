@@ -15,7 +15,9 @@ const moonEquipment = {
         photoCaption: "Buzz Aldrin photographed beside the Apollo 11 Lunar Module descent stage in Mare Tranquillitatis.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo.html",
         nasaRef: "https://www.nasa.gov/mission_pages/apollo/index.html",
-        icon: "fa-solid fa-satellite-dish"
+        icon: "fa-solid fa-satellite-dish",
+        searchTerm: "Apollo Lunar Module",
+        searchKeywords: ["descent", "landing", "module", "apollo", "surface"]
     },
     rover: {
         tag: "Lunar Mobility Archive",
@@ -32,7 +34,9 @@ const moonEquipment = {
         photoCaption: "The Apollo 15 Lunar Roving Vehicle parked near Hadley Rille.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-071A",
         nasaRef: "https://history.nasa.gov/SP-368/s2ch3.htm",
-        icon: "fa-solid fa-car-tunnel"
+        icon: "fa-solid fa-car-tunnel",
+        searchTerm: "Lunar Roving Vehicle",
+        searchKeywords: ["lrv", "rover", "apollo", "driving", "moon"]
     },
     alsep: {
         tag: "Scientific Deployment",
@@ -49,7 +53,9 @@ const moonEquipment = {
         photoCaption: "ALSEP central station deployed during Apollo 12 in Oceanus Procellarum.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/lunar/alsep.html",
         nasaRef: "https://www.nasa.gov/mission_pages/apollo/alsj/alsep.html",
-        icon: "fa-solid fa-flask"
+        icon: "fa-solid fa-flask",
+        searchTerm: "ALSEP lunar experiments",
+        searchKeywords: ["alsep", "scientific", "instrument", "package", "experiment"]
     },
     surveyor: {
         tag: "Unmanned Robotic Pioneer",
@@ -66,6 +72,8 @@ const moonEquipment = {
         photoCaption: "Surveyor 3 photographed inside a lunar crater by Apollo 12 astronaut Pete Conrad.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/lunar/surveyor.html",
         nasaRef: "https://history.nasa.gov/SP-4210/contents.htm",
-        icon: "fa-solid fa-radar"
+        icon: "fa-solid fa-radar",
+        searchTerm: "Surveyor lunar lander",
+        searchKeywords: ["surveyor", "lander", "unmanned", "spacecraft", "moon"]
     }
 };

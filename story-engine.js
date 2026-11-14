@@ -96,7 +96,44 @@ function openDetailedStory() {
     if (nasaLink) nasaLink.href = data.nasaRef;
 
     storyModal.classList.add('active');
+    fetchNASAImages(data);
 }
+
+async function fetchNASAImages(data) {
+    const galleryContainer = document.getElementById('additionalImages');
+    galleryContainer.innerHTML = '<p class="loading-msg">Querying NASA Image Archives...</p>';
+    
+    if (!data.searchTerm) {
+        galleryContainer.innerHTML = '';
+        return;
+    }
+
+    try {
+        const response = await fetch(`https://images-api.nasa.gov/search?q=${encodeURIComponent(data.searchTerm)}&media_type=image`);
+        const result = await response.json();
+        const items = result.collection.items.slice(1, 7); // Skip first as it's the main image
+
+        if (items.length === 0) {
+            galleryContainer.innerHTML = '<p class="loading-msg">No additional archives found.</p>';
+            return;
+        }
+
+        galleryContainer.innerHTML = '';
+        items.forEach(item => {
+            if (item.links && item.links[0]) {
+                const img = document.createElement('img');
+                img.src = item.links[0].href;
+                img.className = 'nasa-gallery-img';
+                img.alt = item.data[0].title;
+                img.title = item.data[0].title;
+                galleryContainer.appendChild(img);
+            }
+        });
+    } catch (error) {
+        galleryContainer.innerHTML = '<p class="loading-msg">Unable to reach NASA servers.</p>';
+    }
+}
+
 
 function closeDetailedStory() {
     const storyModal = document.getElementById('storyModal');
