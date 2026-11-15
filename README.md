@@ -1,4 +1,4 @@
-# SPACE LEGACY 
+# BEYOND THE MISSION
 
 ### NASA Space Apps Challenge 2026 | Team 6Explorers
 
