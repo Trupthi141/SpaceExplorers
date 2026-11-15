@@ -68,7 +68,7 @@ const moonEquipment = {
         contributions: "Proved lunar regolith could support a spacecraft without sinking, enabling the crewed lunar landing program.",
         fate: "Resting across various landing sites (Surveyor 3 was visited by Apollo 12 astronauts in 1969).",
         reason: "One-way unmanned robotic testbeds with no return rocket stages.",
-        photo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Surveyor_1_on_Moon.jpg",
+        photo: "https://science.nasa.gov/photojournal/surveyor-1-americas-first-soft-lunar-landing/",
         photoCaption: "First photograph transmitted by NASA's Surveyor 1 television camera showing its footpad and solar panel frame resting on the lunar surface in Oceanus Procellarum (June 1966).",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/lunar/surveyor.html",
         nasaRef: "https://history.nasa.gov/SP-4210/contents.htm",
