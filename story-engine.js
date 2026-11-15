@@ -87,7 +87,12 @@ function openDetailedStory() {
 
     const photoEl = document.getElementById('storyPhoto');
     const captionEl = document.getElementById('storyCaption');
-    if (photoEl) photoEl.src = data.photo;
+    if (photoEl) {
+    photoEl.src = data.photo;
+    photoEl.onerror = () => {
+        console.error("Failed to load image:", data.photo);
+    };
+}
     if (captionEl) captionEl.textContent = data.photoCaption;
 
     const nssdcLink = document.getElementById('storyNssdc');
@@ -103,6 +108,10 @@ async function fetchNASAImages(data) {
     const galleryContainer = document.getElementById('additionalImages');
     galleryContainer.innerHTML = '<p class="loading-msg">Querying NASA Image Archives...</p>';
     
+    if (data.title && data.title.includes("Surveyor")) {
+    galleryContainer.innerHTML = '';
+    return;
+}
     if (!data.searchTerm) {
         galleryContainer.innerHTML = '';
         return;

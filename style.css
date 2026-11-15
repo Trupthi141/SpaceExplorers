@@ -594,3 +594,8 @@ body {
         padding: 2rem 1.5rem 1.5rem 1.5rem;
     }
 }
+#nasaGalleryContainer {
+    height: auto !important;
+    min-height: 400px;
+    overflow: visible !important;
+}

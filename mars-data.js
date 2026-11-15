@@ -125,7 +125,7 @@ const marsEquipment = {
         contributions: "Proved aerial scout capability, covering 17 km flight distance and mapping paths for Perseverance.",
         fate: "Parked at Valinor Hills in Jezero Crater.",
         reason: "Damaged rotor blade tip on flight 72 during touchdown, ending aerodynamic flight capability.",
-        photo: "https://science.nasa.gov/photojournal/ingenuity-deployed-on-mars/",
+        photo: "https://photojournal.jpl.nasa.gov/jpeg/PIA25881.jpg",
         photoCaption: "Ingenuity helicopter standing alone on the Martian surface in Jezero Crater.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-068A",
         nasaRef: "https://mars.nasa.gov/technology/helicopter/",

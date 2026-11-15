@@ -55,7 +55,7 @@ const equipmentData = {
     },
     surveyor: {
         tag: "Unmanned Robotic Pioneer",
-        title: "Surveyor Landers (1 through 7)",
+        title: "Surveyor Landers",
         mission: "Surveyor Program",
         year: "1966 - 1968",
         status: "Inactive / Surveyor 2 Crashed",
@@ -64,8 +64,8 @@ const equipmentData = {
         contributions: "Provided critical engineering data that eliminated fears of spacecraft sinking into bottomless dust layers.",
         fate: "Stationed across various lunar maria and highland targets (Surveyor 3 was later visited by Apollo 12 astronauts who retrieved camera parts).",
         reason: "Unmanned robotic probes designed for one-way missions without return propulsion stages.",
-        photo: "https://images.nasa.gov/details/PIA00342",
-        photoCaption: "Surveyor 3 landers resting inside a lunar crater, photographed by Apollo 12.",
+        photo: "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/lunar-science/2023/09/as12-48-7121_orig.jpg",
+        photoCaption: "Surveyor 3 on the lunar surface, photographed by Apollo 12 astronaut Alan Bean on November 20, 1969. Credit: NASA/JSC.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/lunar/surveyor.html",
         nasaRef: "https://history.nasa.gov/SP-4210/contents.htm",
         icon: "fa-solid fa-radar"
