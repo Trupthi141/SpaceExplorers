@@ -116,6 +116,18 @@ async function fetchNASAImages(data) {
         galleryContainer.innerHTML = '';
         return;
     }
+    if (data.title && data.title.includes("Phoenix")) {
+    galleryContainer.innerHTML = '';
+
+    const img = document.createElement('img');
+    img.src = "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia11/pia11044/PIA11044.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1924&w=5100";
+    img.className = 'nasa-gallery-img';
+    img.alt = 'Phoenix Mars lander workspace';
+    img.title = 'Phoenix Mars lander workspace';
+
+    galleryContainer.appendChild(img);
+    return;
+}
 
     try {
         const response = await fetch(`https://images-api.nasa.gov/search?q=${encodeURIComponent(data.searchTerm)}&media_type=image`);
