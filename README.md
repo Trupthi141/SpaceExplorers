@@ -1,14 +1,14 @@
-# SPACE LEGACY 🌌
+# SPACE LEGACY 
 
-### NASA Space Apps Challenge 2026 | Team 4Explorers
+### NASA Space Apps Challenge 2026 | Team 6Explorers
 
 **SPACE LEGACY** is an educational storytelling website that explores NASA's discarded equipment on the Moon and Mars, highlighting the history, purpose, and scientific legacy of human-made objects left behind during space missions.
 
-## 🚀 Project Overview
+##  Project Overview
 
 The project aims to make space exploration history engaging and accessible through interactive storytelling, equipment information, and educational resources.
 
-## ✨ Features
+##  Features
 
 - Interactive storytelling about discarded equipment on the Moon and Mars
 - Equipment gallery and mission information
@@ -16,26 +16,26 @@ The project aims to make space exploration history engaging and accessible throu
 - Interactive exploration features
 - AI Usage & Disclosure page for transparency
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - HTML, CSS, JavaScript
-- React / Vite (if applicable to your project)
+  
 - Git and GitHub
 
-## 👥 Team
+##  Team
 
-**Team Name:** 4Explorers
+**Team Name:** 6Explorers
 
-## 🎯 Challenge
+##  Challenge
 
 NASA Space Apps Challenge 2026
 
 **Challenge:** Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars
 
-## 🤖 AI Usage & Disclosure
+##  AI Usage & Disclosure
 
 Please refer to the AI Usage & Disclosure page on our website for information about AI tools used and their contributions.
 
-## 📌 Project Status
+##  Project Status
 
 Developed as a NASA Space Apps Challenge 2026 project.
