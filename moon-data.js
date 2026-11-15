@@ -51,8 +51,8 @@ const moonEquipment = {
         reason: "Designed as permanent autonomous monitoring stations with no return propulsion system.",
         photo: "https://images-assets.nasa.gov/image/as12-46-6813/as12-46-6813~orig.jpg",
         photoCaption: "ALSEP central station deployed during Apollo 12 in Oceanus Procellarum.",
-        nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/lunar/alsep.html",
-        nasaRef: "https://www.nasa.gov/mission_pages/apollo/alsj/alsep.html",
+        nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo12info.html",
+        nasaRef: "https://www.nasa.gov/wp-content/uploads/static/history/SP-350/ch-12-7.html",
         icon: "fa-solid fa-flask",
         searchTerm: "ALSEP lunar experiments",
         searchKeywords: ["alsep", "scientific", "instrument", "package", "experiment"]
@@ -71,7 +71,7 @@ const moonEquipment = {
         photo:  "https://images-assets.nasa.gov/image/as12-48-7121/as12-48-7121~orig.jpg",
         photoCaption: "Surveyor 3 on the lunar surface, photographed by Apollo 12 astronauts on November 20, 1969. Credit: NASA.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/lunar/surveyor.html",
-        nasaRef: "https://history.nasa.gov/SP-4210/contents.htm",
+        nasaRef: "https://science.nasa.gov/mission/lunar-rangers-and-surveyors/",
         icon: "fa-solid fa-radar",
         searchTerm: "Surveyor lunar lander",
         searchKeywords: ["surveyor", "lander", "unmanned", "spacecraft", "moon"]

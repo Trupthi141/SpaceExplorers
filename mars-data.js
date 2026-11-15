@@ -71,7 +71,7 @@ const marsEquipment = {
         photo: "https://images-assets.nasa.gov/image/PIA00561/PIA00561~orig.jpg",
         photoCaption: "Viking lander sample collector arm and meteorological boom resting on the Martian surface.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/planetary/viking.html",
-        nasaRef: "https://history.nasa.gov/SP-4212/contents.html",
+        nasaRef: "https://science.nasa.gov/mission/viking/",
         icon: "fa-solid fa-satellite-dish",
         searchTerm: "Viking Mars lander",
         searchKeywords: ["viking", "lander", "mars", "chryse", "utopia"]
@@ -87,7 +87,7 @@ const marsEquipment = {
         contributions: "First mission to touch and vaporize Martian water ice; discovered calcium carbonate and perchlorate salts.",
         fate: "Stationed in northern polar plains.",
         reason: "Crushed by hundreds of pounds of frozen carbon dioxide dry ice during the polar winter.",
-        photo: "https://images-assets.nasa.gov/image/PIA11142/PIA11142~orig.jpg",
+        photo: "https://science.nasa.gov/wp-content/uploads/2024/03/phoenix-lander2.jpg",
         photoCaption: "Phoenix lander deck, solar panels, and robotic arm hardware deployed on the Martian arctic terrain.",
         nssdcLink: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2008-029A",
         nasaRef: "https://mars.nasa.gov/phoenix/",
